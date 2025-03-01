@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  
+
   <title>brewnok | IT & Digital Marketing Services</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -16,7 +16,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,43 +33,168 @@
   <style>
     /* Ensuring that the images are in their normal state by default */
     .images img {
-      transition: transform 0.3s ease; /* Smooth transition when hovering */
+      transition: transform 0.3s ease;
+      /* Smooth transition when hovering */
     }
-  
+
     /* Hover effect on the images */
     .images img:hover {
-      transform: translateX(10px) translateY(-10px); /* Move the image on hover */
+      transform: translateX(10px) translateY(-10px);
+      /* Move the image on hover */
     }
-  
+
     /* Optionally, add a subtle effect to make the movement smoother */
     .images img.main-image:hover {
       transform: translateX(15px) translateY(-15px);
     }
-  
+
     .images img.small-image:hover {
       transform: translateX(10px) translateY(-10px);
     }
 
-     .hero-image {
-    perspective: 1000px; /* The higher the value, the less intense the 3D effect */
-  }
+    .hero-image {
+      perspective: 1000px;
+      /* The higher the value, the less intense the 3D effect */
+    }
 
-  .hero-image img {
-    transition: transform 0.5s ease; /* Smooth transition for the 3D effect */
-    transform-style: preserve-3d; /* Ensure 3D transforms are preserved */
-  }
+    .hero-image img {
+      transition: transform 0.5s ease;
+      /* Smooth transition for the 3D effect */
+      transform-style: preserve-3d;
+      /* Ensure 3D transforms are preserved */
+    }
 
-  /* 3D rotation effect on hover */
-  .hero-image img:hover {
-    transform: rotateY(20deg) rotateX(15deg); /* Adjust rotation angles as needed */
-  }
+    /* 3D rotation effect on hover */
+    .hero-image img:hover {
+      transform: rotateY(20deg) rotateX(15deg);
+      /* Adjust rotation angles as needed */
+    }
+
+    /* Base button style */
+    .hero-buttons .btn {
+      position: relative;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      background-color: #007bff;
+      /* Initial button color */
+      color: white;
+      border: 2px solid transparent;
+      /* Transparent border */
+      outline: none;
+      transition: all 0.3s ease;
+      /* Smooth transition */
+      cursor: pointer;
+      overflow: hidden;
+      text-align: center;
+      display: inline-block;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      /* Default shadow for depth */
+    }
+
+    /* 3D Hover effect */
+    .hero-buttons .btn:hover {
+      transform: translateY(-10px) rotateX(10deg) rotateY(10deg);
+      /* Lift the button and add rotation */
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      /* Enhance shadow on hover */
+      background-color: #007bff;
+      /* Darken the button color */
+    }
+
+    /* Adding a cool 3D light effect on hover */
+    .hero-buttons .btn::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.4);
+      /* Light effect */
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .hero-buttons .btn:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0);
+    }
+
+
+    /* Base button style for .btn-getstarted */
+    .btn-getstarted {
+      position: relative;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 30px;
+      background-color: #28a745;
+      /* Initial color for the button */
+      color: white;
+      border: 2px solid transparent;
+      /* Transparent border */
+      outline: none;
+      text-align: center;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      /* Smooth transition */
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      /* Default shadow for depth */
+    }
+
+    /* Hover effect for 3D pop and color change */
+    .btn-getstarted:hover {
+      transform: translateY(-5px) rotateX(10deg) rotateY(-15deg);
+      /* Lift and rotate */
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      /* Enhanced shadow */
+      background-color: #218838;
+      /* Darker green on hover */
+    }
+
+    /* Adding a light reflection effect using ::after pseudo-element */
+    .btn-getstarted::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.4);
+      /* Light effect */
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .btn-getstarted:hover::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0);
+      /* Light effect grows and fades */
+    }
+
+    /* Optional: Adding spacing for navbar items */
+    .navbar .btn-getstarted {
+      margin-left: 10px;
+    }
   </style>
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <div
+      class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="#" class="logo d-flex align-items-center me-auto me-xl-0">
         <img class='sitename' src="assets/img/brewnok-logo.png" alt="">
@@ -94,20 +221,20 @@
           </li> -->
 
           <li><a href="#">Products</a></li>
-        
+
           <li><a href="#">Free Products</a></li>
 
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-         
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Quote</a>
+      <a class="btn-getstarted" href="#">Get Quote</a>
 
     </div>
-    
+
   </header>
 
   <main class="main">
@@ -126,12 +253,13 @@
               </div>
 
               <h1 class="mb-4" style="font-size: 30px;">
-                <span class="accent-text">brewnok</span> 
+                <span class="accent-text">brewnok</span>
                 provides top-tier it services & digital marketing services for boosting your business
               </h1>
 
               <p class="mb-4 mb-md-5">
-                We empower businesses with cutting-edge IT solutions, delivering top-tier products and services, while enhancing their digital presence through expert Digital Marketing strategies.
+                We empower businesses with cutting-edge IT solutions, delivering top-tier products and services, while
+                enhancing their digital presence through expert Digital Marketing strategies.
               </p>
 
               <div class="hero-buttons">
@@ -208,7 +336,12 @@
           <div class="col-xl-5" data-aos="fade-up" data-aos-delay="200">
             <span class="about-meta">MORE ABOUT US</span>
             <h2 class="about-title">who are we?</h2>
-            <p class="about-description">brewnok was founded on January 7th, 2025, by a dynamic team of IT professionals and business experts with a shared mission to make top-tier IT and digital marketing services accessible and affordable for businesses of all sizes. Driven by a passion for excellence, brewnok is committed to delivering high-quality services that empower companies to thrive, regardless of their scale. By combining innovation with affordability, we aim to bridge the gap between cutting-edge technology and business success.</p>
+            <p class="about-description">brewnok was founded on January 7th, 2025, by a dynamic team of IT professionals
+              and business experts with a shared mission to make top-tier IT and digital marketing services accessible
+              and affordable for businesses of all sizes. Driven by a passion for excellence, brewnok is committed to
+              delivering high-quality services that empower companies to thrive, regardless of their scale. By combining
+              innovation with affordability, we aim to bridge the gap between cutting-edge technology and business
+              success.</p>
 
             <div class="row feature-list-wrapper">
               <div class="col-md-6">
@@ -225,8 +358,8 @@
               </div>
             </div>
 
-            
-            
+
+
           </div>
 
           <div class="col-xl-6" data-aos="fade-up" data-aos-delay="300">
@@ -273,7 +406,7 @@
               </a><!-- End tab nav item -->
 
             </li>
-           
+
 
           </ul>
 
@@ -284,11 +417,11 @@
           <div class="tab-pane fade active show" id="features-tab-1">
             <div class="row">
               <section id="services" class="services section light-background">
-          
+
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
-          
+
                   <div class="row g-4">
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -296,12 +429,13 @@
                         </div>
                         <div>
                           <h3>Software Development</h3>
-                          <p>Custom software solutions are tailored applications designed to meet your business's specific needs, improving efficiency, scalability, and flexibility.</p>
+                          <p>Custom software solutions are tailored applications designed to meet your business's
+                            specific needs, improving efficiency, scalability, and flexibility.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -309,12 +443,13 @@
                         </div>
                         <div>
                           <h3>Web Development</h3>
-                          <p>Building responsive websites ensures a seamless, user-friendly experience across all devices, with fast load times, and easy navigation.</p>
+                          <p>Building responsive websites ensures a seamless, user-friendly experience across all
+                            devices, with fast load times, and easy navigation.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -322,12 +457,13 @@
                         </div>
                         <div>
                           <h3>Quality Assurance</h3>
-                          <p>Quality assurance ensures smooth software performance, enhances speed, and improves stability. It makes your stuff reliable.</p>
+                          <p>Quality assurance ensures smooth software performance, enhances speed, and improves
+                            stability. It makes your stuff reliable.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -335,7 +471,8 @@
                         </div>
                         <div>
                           <h3>Observability & Data Analytics</h3>
-                          <p>Data analytics and observability ensure you can monitor performance, identify trends on business insights and make informed decisions.</p>
+                          <p>Data analytics and observability ensure you can monitor performance, identify trends on
+                            business insights and make informed decisions.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
@@ -347,7 +484,9 @@
                         </div>
                         <div>
                           <h3>Database Administration</h3>
-                          <p>Database administrations ensures optimized database development, peak performance, security, reduced downtime and reliable access, while safeguarding data from potential risks.</p>
+                          <p>Database administrations ensures optimized database development, peak performance,
+                            security, reduced downtime and reliable access, while safeguarding data from potential
+                            risks.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
@@ -360,15 +499,17 @@
                         </div>
                         <div>
                           <h3>Automation Solution</h3>
-                          <p>Intelligent automation streamlines processes, reduces errors, and optimizes workflows, leading to faster operations, cost savings, and allowing teams to focus on higher-value tasks.</p>
+                          <p>Intelligent automation streamlines processes, reduces errors, and optimizes workflows,
+                            leading to faster operations, cost savings, and allowing teams to focus on higher-value
+                            tasks.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-          
+
                 </div>
-          
+
               </section><!-- /Services Section -->
             </div>
           </div><!-- End tab content item -->
@@ -376,11 +517,11 @@
           <div class="tab-pane fade" id="features-tab-2">
             <div class="row">
               <section id="services" class="services section light-background">
-          
+
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
-          
+
                   <div class="row g-4">
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -388,12 +529,13 @@
                         </div>
                         <div>
                           <h3>SEO / SEM</h3>
-                          <p>SEO boosts organic search rankings, while SEM uses paid ads to drive traffic. Both enhance online visibility, target the right audience, and increase conversions.</p>
+                          <p>SEO boosts organic search rankings, while SEM uses paid ads to drive traffic. Both enhance
+                            online visibility, target the right audience, and increase conversions.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -401,12 +543,14 @@
                         </div>
                         <div>
                           <h3>Social Media Marketing</h3>
-                          <p>Social Media Marketing boosts brand presence on platforms like YouTube, LinkedIn, and Twitter, using Meta Ads, content scheduling, and Google Ads to expand reach and track performance.</p>
+                          <p>Social Media Marketing boosts brand presence on platforms like YouTube, LinkedIn, and
+                            Twitter, using Meta Ads, content scheduling, and Google Ads to expand reach and track
+                            performance.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -414,12 +558,13 @@
                         </div>
                         <div>
                           <h3>Content Creation</h3>
-                          <p>Content Creation involves producing engaging media like BTS reels, promotional videos, posters, GIFs, and voice-overs to highlight your brand and boost audience engagement.</p>
+                          <p>Content Creation involves producing engaging media like BTS reels, promotional videos,
+                            posters, GIFs, and voice-overs to highlight your brand and boost audience engagement.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div><!-- End Service Card -->
-          
+
                     <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
                       <div class="service-card d-flex">
                         <div class="icon flex-shrink-0">
@@ -427,7 +572,8 @@
                         </div>
                         <div>
                           <h3>Brand Awareness</h3>
-                          <p>Brand Awareness boosts visibility through strategies like influencer marketing, targeted ads, and social media engagement to create buzz and foster connections.</p>
+                          <p>Brand Awareness boosts visibility through strategies like influencer marketing, targeted
+                            ads, and social media engagement to create buzz and foster connections.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
@@ -439,7 +585,8 @@
                         </div>
                         <div>
                           <h3>WhatsApp Marketing</h3>
-                          <p>WhatsApp Marketing helps businesses engage customers with personalized messages, promotions, and support, boosting communication and conversions.</p>
+                          <p>WhatsApp Marketing helps businesses engage customers with personalized messages,
+                            promotions, and support, boosting communication and conversions.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
@@ -452,20 +599,21 @@
                         </div>
                         <div>
                           <h3>Email Marketing</h3>
-                          <p>Email Marketing connects with your audience through targeted mails like newsletters and promotions. Using segmentation, automation, and A/B testing.</p>
+                          <p>Email Marketing connects with your audience through targeted mails like newsletters and
+                            promotions. Using segmentation, automation, and A/B testing.</p>
                           <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
                   </div>
-          
+
                 </div>
-          
+
               </section>
             </div>
           </div><!-- End tab content item -->
 
-          
+
 
         </div>
 
@@ -486,23 +634,32 @@
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="feature-box blue">
-              
-              <p style="text-align: center;"><img src="assets/img/products/managerji-logo.png" alt="" style="width: 200px;"></p><br>
-              <p style="text-align: center;">Our End-to-End Hotel Management Suite simplifies all aspects of hotel operations, from guest management to billing and services coordination. It’s an all-in-one solution that enhances efficiency and ensures a seamless guest experience.</p><br>
+
+              <p style="text-align: center;"><img id="managerjiimg" src="assets/img/products/managerji-logo.png" alt=""
+                  style="width: 200px;"></p><br>
+              <p style="text-align: center;">Our End-to-End Hotel Management Suite simplifies all aspects of hotel
+                operations, from guest management to billing and services coordination. It’s an all-in-one solution that
+                enhances efficiency and ensures a seamless guest experience.</p><br>
             </div>
           </div><!-- End Feature Borx-->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="feature-box green">
-              <p style="text-align: center;"><img src="assets/img/products/cominqr-logo.png" alt="" style="width: 200px;"></p><br>
-              <p style="text-align: center;">Our Next Generation QR-based Ticketing-as-a-Service transforms ticketing with seamless, contactless entry. It offers an instant solution that ensures smooth access, enhances customer convenience, and streamlines operations for event organizers.</p>
+              <p style="text-align: center;"><img id="cominqrimg" src="assets/img/products/cominqr-logo.png" alt=""
+                  style="width: 200px;"></p><br>
+              <p style="text-align: center;">Our Next Generation QR-based Ticketing-as-a-Service transforms ticketing
+                with seamless, contactless entry. It offers an instant solution that ensures smooth access, enhances
+                customer convenience, and streamlines operations for event organizers.</p>
             </div>
           </div><!-- End Feature Borx-->
 
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="feature-box blue">
-              <p style="text-align: center;"><img src="assets/img/products/slot4dine-logo.png" alt="" style="width: 200px;"></p><br>
-              <p style="text-align: center;">Our Intuitive Reservation System that makes booking effortless with its user-friendly interface. It simplifies the reservation process, offering seamless navigation for both guests and staff, ensuring quick and accurate bookings every time.</p>
+              <p style="text-align: center;"><img id="slot4dineimg" src="assets/img/products/slot4dine-logo.png" alt=""
+                  style="width: 200px;"></p><br>
+              <p style="text-align: center;">Our Intuitive Reservation System that makes booking effortless with its
+                user-friendly interface. It simplifies the reservation process, offering seamless navigation for both
+                guests and staff, ensuring quick and accurate bookings every time.</p>
             </div>
           </div><!-- End Feature Borx-->
 
@@ -513,7 +670,7 @@
     </section><!-- /Features Cards Section -->
 
     <!-- Features 2 Section -->
-   
+
 
     <!-- Call To Action Section -->
     <section id="call-to-action" class="call-to-action section">
@@ -530,13 +687,17 @@
           <!-- Abstract Background Elements -->
           <div class="shape shape-1">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z" transform="translate(100 100)"></path>
+              <path
+                d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z"
+                transform="translate(100 100)"></path>
             </svg>
           </div>
 
           <div class="shape shape-2">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z" transform="translate(100 100)"></path>
+              <path
+                d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z"
+                transform="translate(100 100)"></path>
             </svg>
           </div>
 
@@ -561,7 +722,9 @@
 
           <div class="shape shape-3">
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <path d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z" transform="translate(100 100)"></path>
+              <path
+                d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z"
+                transform="translate(100 100)"></path>
             </svg>
           </div>
         </div>
@@ -664,9 +827,9 @@
 
 
     <!-- Services Section -->
-   
 
-   
+
+
 
     <!-- Faq Section -->
     <section class="faq-9 faq section light-background" id="faq">
@@ -678,8 +841,11 @@
             <h2 class="faq-title">what's our process?</h2>
             <p class="faq-description">We follow these steps to complete your work</p>
             <div class="faq-arrow d-none d-lg-block" data-aos="fade-up" data-aos-delay="200">
-              <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z" fill="currentColor"></path>
+              <svg class="faq-arrow" width="200" height="211" viewBox="0 0 200 211" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M198.804 194.488C189.279 189.596 179.529 185.52 169.407 182.07L169.384 182.049C169.227 181.994 169.07 181.939 168.912 181.884C166.669 181.139 165.906 184.546 167.669 185.615C174.053 189.473 182.761 191.837 189.146 195.695C156.603 195.912 119.781 196.591 91.266 179.049C62.5221 161.368 48.1094 130.695 56.934 98.891C84.5539 98.7247 112.556 84.0176 129.508 62.667C136.396 53.9724 146.193 35.1448 129.773 30.2717C114.292 25.6624 93.7109 41.8875 83.1971 51.3147C70.1109 63.039 59.63 78.433 54.2039 95.0087C52.1221 94.9842 50.0776 94.8683 48.0703 94.6608C30.1803 92.8027 11.2197 83.6338 5.44902 65.1074C-1.88449 41.5699 14.4994 19.0183 27.9202 1.56641C28.6411 0.625793 27.2862 -0.561638 26.5419 0.358501C13.4588 16.4098 -0.221091 34.5242 0.896608 56.5659C1.8218 74.6941 14.221 87.9401 30.4121 94.2058C37.7076 97.0203 45.3454 98.5003 53.0334 98.8449C47.8679 117.532 49.2961 137.487 60.7729 155.283C87.7615 197.081 139.616 201.147 184.786 201.155L174.332 206.827C172.119 208.033 174.345 211.287 176.537 210.105C182.06 207.125 187.582 204.122 193.084 201.144C193.346 201.147 195.161 199.887 195.423 199.868C197.08 198.548 193.084 201.144 195.528 199.81C196.688 199.192 197.846 198.552 199.006 197.935C200.397 197.167 200.007 195.087 198.804 194.488ZM60.8213 88.0427C67.6894 72.648 78.8538 59.1566 92.1207 49.0388C98.8475 43.9065 106.334 39.2953 114.188 36.1439C117.295 34.8947 120.798 33.6609 124.168 33.635C134.365 33.5511 136.354 42.9911 132.638 51.031C120.47 77.4222 86.8639 93.9837 58.0983 94.9666C58.8971 92.6666 59.783 90.3603 60.8213 88.0427Z"
+                  fill="currentColor"></path>
               </svg>
             </div>
           </div>
@@ -713,7 +879,7 @@
       </div>
     </section><!-- /Faq Section -->
 
-   
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact section light-background">
@@ -730,7 +896,7 @@
           <div class="col-lg-5">
             <div class="info-box" data-aos="fade-up" data-aos-delay="200">
               <h3>Contact Info</h3>
-<br>
+              <br>
               <div class="info-item" data-aos="fade-up" data-aos-delay="300">
                 <div class="icon-box">
                   <i class="bi bi-geo-alt"></i>
@@ -738,10 +904,10 @@
                 <div class="content">
                   <h4>Address</h4>
                   <p>Agartala, Tripura, IN 799004</p>
-                  
+
                 </div>
               </div>
-<!-- <br> -->
+              <!-- <br> -->
               <div class="info-item" data-aos="fade-up" data-aos-delay="400">
                 <div class="icon-box">
                   <i class="bi bi-telephone"></i>
@@ -751,7 +917,7 @@
                   <p>(+91) 7439762782</p>
                 </div>
               </div>
-<!-- <br> -->
+              <!-- <br> -->
               <div class="info-item" data-aos="fade-up" data-aos-delay="500">
                 <div class="icon-box">
                   <i class="bi bi-envelope"></i>
@@ -774,12 +940,12 @@
                   <div class="col-md-6">
                     <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
                   </div>
-                  
+
                   <div class="col-md-6 ">
                     <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
                   </div>
 
-                  
+
                   <div class="col-md-6 ">
                     <input type="text" class="form-control" name="phone" placeholder="Your Contact Number" required="">
                   </div>
@@ -879,7 +1045,8 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
