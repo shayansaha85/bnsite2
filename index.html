@@ -28,7 +28,40 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <style>
+    /* Ensuring that the images are in their normal state by default */
+    .images img {
+      transition: transform 0.3s ease; /* Smooth transition when hovering */
+    }
+  
+    /* Hover effect on the images */
+    .images img:hover {
+      transform: translateX(10px) translateY(-10px); /* Move the image on hover */
+    }
+  
+    /* Optionally, add a subtle effect to make the movement smoother */
+    .images img.main-image:hover {
+      transform: translateX(15px) translateY(-15px);
+    }
+  
+    .images img.small-image:hover {
+      transform: translateX(10px) translateY(-10px);
+    }
 
+     .hero-image {
+    perspective: 1000px; /* The higher the value, the less intense the 3D effect */
+  }
+
+  .hero-image img {
+    transition: transform 0.5s ease; /* Smooth transition for the 3D effect */
+    transform-style: preserve-3d; /* Ensure 3D transforms are preserved */
+  }
+
+  /* 3D rotation effect on hover */
+  .hero-image img:hover {
+    transform: rotateY(20deg) rotateX(15deg); /* Adjust rotation angles as needed */
+  }
+  </style>
 </head>
 
 <body class="index-page">
@@ -74,6 +107,7 @@
       <a class="btn-getstarted" href="index.html#about">Get Quote</a>
 
     </div>
+    
   </header>
 
   <main class="main">
